@@ -36,3 +36,9 @@ select{-webkit-appearance:none;appearance:none;background-image:linear-gradient(
 input[type=month]{color-scheme:light}input[type=month]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.65;filter:sepia(1) saturate(.45) hue-rotate(160deg)}
 .button,.nav-cta,.text-link,.card-footer button,.results-row button{transition:transform .2s,background-color .2s,color .2s,opacity .2s}.button:hover{transform:translateY(-2px)}.button.dark:hover{background:#123e61}.button.light:hover{background:white}.nav-cta:hover,.text-link:hover,.card-footer button:hover{opacity:.72}.results-row button{color:var(--ink);text-underline-offset:4px}
 .drawer-close{width:42px;height:42px;border:1px solid #0a294733;border-radius:50%;display:grid;place-items:center;line-height:1}.drawer-close:hover{background:var(--ink);color:white}.language-picker select{background-image:linear-gradient(45deg,transparent 50%,white 50%),linear-gradient(135deg,white 50%,transparent 50%);color:white}
+
+/* Centered booking modal */
+.inquiry-drawer{left:50%;right:auto;top:50%;height:auto;max-height:calc(100vh - 48px);width:min(620px,calc(100% - 40px));border-radius:6px;box-shadow:0 30px 90px #061c3166;transform:translate(-50%,-46%) scale(.96);opacity:0;visibility:hidden;pointer-events:none;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .28s ease,visibility 0s linear .38s}
+.inquiry-drawer.open{transform:translate(-50%,-50%) scale(1);opacity:1;visibility:visible;pointer-events:auto;transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .28s ease,visibility 0s}
+.drawer-backdrop{animation:modalBackdrop .28s ease both}@keyframes modalBackdrop{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.inquiry-drawer{top:50%;width:calc(100% - 24px);max-height:calc(100vh - 24px);padding:55px 25px 35px;border-radius:5px}.inquiry-drawer.open{transform:translate(-50%,-50%) scale(1)}}
